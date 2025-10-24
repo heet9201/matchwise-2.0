@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/matchwise_2_0.iml" filepath="$PROJECT_DIR$/matchwise_2_0.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android/matchwise_2_0_android.iml" filepath="$PROJECT_DIR$/android/matchwise_2_0_android.iml" />
+    </modules>
+  </component>
+</project>
