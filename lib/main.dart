@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'app.dart';
 import 'core/services/feedback_service.dart';
+import 'core/services/image_cache_service.dart';
+import 'core/services/database_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -24,7 +27,25 @@ void main() async {
   );
 
   // Initialize feedback service
-  await feedbackService.initialize();
+  try {
+    await feedbackService.initialize();
+  } catch (e) {
+    debugPrint('Warning: FeedbackService initialization failed: $e');
+  }
+
+  // Initialize image cache service
+  try {
+    await imageCacheService.initialize();
+  } catch (e) {
+    debugPrint('Warning: ImageCacheService initialization failed: $e');
+  }
+
+  // Initialize database service
+  try {
+    await databaseService.initialize();
+  } catch (e) {
+    debugPrint('Warning: DatabaseService initialization failed: $e');
+  }
 
   runApp(
     const ProviderScope(
